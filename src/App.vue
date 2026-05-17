@@ -1,28 +1,23 @@
+<template>
+  <router-view />
+</template>
+
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import BeaverSDK from '@beaver/js-sdk'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'App',
-  
-  setup() {
-    onMounted(() => {
-      // 注册 Web Component
-      BeaverSDK.register()
-    })
-  }
+  name: 'App'
 })
 </script>
-
-<template>
-  <beaver-login
-    app-id="app_3d70caad"
-  />
-</template>
 
 <style>
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 </style>

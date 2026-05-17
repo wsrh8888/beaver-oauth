@@ -1,28 +1,32 @@
 import config from "@/config/env"
 import { ajax } from "@/utils/request"
 import type {
-  IGetOAuthConfigReq,
-  IGetOAuthConfigRes,
-  IUpdateOAuthConfigReq,
-  IUpdateOAuthConfigRes
+  IConfirmQrCodeLoginReq,
+  IConfirmQrCodeLoginRes,
+  ICheckQrCodeStatusReq,
+  ICheckQrCodeStatusRes
 } from "@/types/api/oauth"
 
-// ==================== OAuth 配置 ====================
+// ==================== OAuth 扫码登录接口 ====================
 
-// 获取 OAuth 配置
-export function getOAuthConfigApi(params: IGetOAuthConfigReq) {
-  return ajax<IGetOAuthConfigRes>({
-    method: "GET",
-    url: `${config.baseAPI}/portal/open/v1/oauth/config`,
-    params
+/**
+ * 确认扫码登录（由移动端 App 调用）
+ */
+export function confirmQrCodeLoginApi(data: IConfirmQrCodeLoginReq) {
+  return ajax<IConfirmQrCodeLoginRes>({
+    method: "POST",
+    url: `${config.baseAPI}/open/v1/oauth/qrcode_confirm`,
+    data
   })
 }
 
-// 更新 OAuth 配置
-export function updateOAuthConfigApi(data: IUpdateOAuthConfigReq) {
-  return ajax<IUpdateOAuthConfigRes>({
-    method: "POST",
-    url: `${config.baseAPI}/portal/open/v1/oauth/config_update`,
-    data
+/**
+ * 查询扫码状态（PC 端轮询）
+ */
+export function checkQrCodeStatusApi(params: ICheckQrCodeStatusReq) {
+  return ajax<ICheckQrCodeStatusRes>({
+    method: "GET",
+    url: `${config.baseAPI}/open/v1/oauth/qrcode_status`,
+    params
   })
 }

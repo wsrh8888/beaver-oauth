@@ -32,15 +32,7 @@ const request = axios.create({
  */
 request.interceptors.request.use(
   (requestConfig) => {
-    // 添加token和其他公共头部
-    const token = localStorage.getItem("token") || ""
-
-    const headers: HeaderRequest = {
-      Token: token, // 对应auth_admin.api中的Token header
-      deviceId: localStorage.getItem("deviceId") || ""
-    }
-
-    requestConfig.headers = Object.assign({}, requestConfig.headers, headers)
+    requestConfig.headers = Object.assign({}, requestConfig.headers)
     return requestConfig
   },
   (error: Error) => {
@@ -53,21 +45,6 @@ request.interceptors.request.use(
  */
 request.interceptors.response.use(
   (response) => {
-    const data = response.data as IResponseSuccessData<any>
-
-    // 处理认证失败的情况
-    if (data.code !== 0 && response.config.url?.includes("authentication")) {
-      // 清除token并跳转到登录页
-      localStorage.removeItem("token")
-      localStorage.removeItem("userId")
-      localStorage.removeItem("phone")
-
-      // 可以在这里添加路由跳转逻辑
-      window.location.href = "/login"
-
-      return Promise.reject(new Error("认证失败，请重新登录"))
-    }
-
     return response.data
   },
   (error: AxiosError) => {

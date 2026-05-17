@@ -1,20 +1,17 @@
-// API 配置
-const config = {
-  // 开发环境
-  dev: {
-    baseAPI: 'http://localhost:8888'
-  },
-  // 测试环境
-  test: {
-    baseAPI: 'http://test.beaver.com'
-  },
-  // 生产环境
-  prod: {
-    baseAPI: 'https://api.beaver.com'
-  }
+/**
+ * 环境配置
+ */
+export const config = {
+  // 当前环境
+  env: import.meta.env.VITE_APP_ENV,
+
+  // API 基础地址
+  baseAPI: import.meta.env.VITE_API_BASE,
+
 }
 
-// 根据环境变量选择配置
-const env = import.meta.env.MODE || 'dev'
+// 打印当前环境信息
+console.info("🚀 当前环境:", config.env)
+console.info("🌐 API地址:", config.baseAPI)
 
-export default config[env as keyof typeof config] || config.dev
+export default config
