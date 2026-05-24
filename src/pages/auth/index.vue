@@ -11,14 +11,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import '@beaver/js-sdk' // 导入 SDK，自动注册 Web Component
+import { defineComponent, onMounted } from 'vue'
+import BeaverSDK from '@beaver/js-sdk' // 导入 SDK
 
 export default defineComponent({
   name: 'AuthPage',
   setup() {
     // 从 URL 获取参数
     const params = new URLSearchParams(window.location.search)
+    
+    onMounted(() => {
+      // 注册 Web Component
+      BeaverSDK.register()
+    })
     
     return {
       appId: params.get('appId') || '',
