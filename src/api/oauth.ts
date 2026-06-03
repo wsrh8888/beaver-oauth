@@ -15,7 +15,7 @@ import type {
 export function confirmQrCodeLoginApi(data: IConfirmQrCodeLoginReq) {
   return ajax<IConfirmQrCodeLoginRes>({
     method: "POST",
-    url: `${config.baseAPI}/open/v1/oauth/qrcode_confirm`,
+    url: `${config.baseAPI}/api/open/oauth_public/v1/qrcode_confirm`,
     data
   })
 }
@@ -26,7 +26,7 @@ export function confirmQrCodeLoginApi(data: IConfirmQrCodeLoginReq) {
 export function checkQrCodeStatusApi(params: ICheckQrCodeStatusReq) {
   return ajax<ICheckQrCodeStatusRes>({
     method: "GET",
-    url: `${config.baseAPI}/open/v1/oauth/qrcode_status`,
+    url: `${config.baseAPI}/api/open/oauth_public/v1/qrcode_status`,
     params
   })
 }

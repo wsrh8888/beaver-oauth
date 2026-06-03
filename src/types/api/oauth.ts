@@ -21,5 +21,5 @@ export interface ICheckQrCodeStatusReq {
 
 export interface ICheckQrCodeStatusRes {
   status: "waiting" | "scanned" | "confirmed" | "cancelled" | "expired"
-  userId?: string
+  code?: string
 }
