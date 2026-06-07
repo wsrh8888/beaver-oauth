@@ -1,20 +1,17 @@
-// ==================== OAuth 扫码登录接口 ====================
-
-/**
- * 确认扫码登录（由移动端 App 调用）
- */
-export interface IConfirmQrCodeLoginReq {
+export interface IGetQrCodeSceneReq {
   sceneId: string
-  userId: string
 }
 
-export interface IConfirmQrCodeLoginRes {
-  success: boolean
+export interface IGetQrCodeSceneRes {
+  sceneId: string
+  appId: string
+  appName: string
+  appIcon: string
+  status: "waiting" | "scanned" | "confirmed" | "cancelled" | "expired"
+  expireIn: number
+  scopes: string[]
 }
 
-/**
- * 查询扫码状态（PC 端轮询）
- */
 export interface ICheckQrCodeStatusReq {
   sceneId: string
 }
