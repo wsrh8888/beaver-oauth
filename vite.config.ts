@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: true,
-      open: true
+      port: 8045,
     },
     // 为了在渲染中使用环境变量
     define: {

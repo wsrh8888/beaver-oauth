@@ -1,19 +1,20 @@
 <template>
   <div class="auth-page">
     <p v-if="pageError" class="auth-error">{{ pageError }}</p>
-    <beaver-login
-      v-else
-      :app-id="appId"
-      :redirect-url="redirectUri"
-      :state="state"
-      :scope="scope"
-    />
+    <div v-else class="auth-card">
+      <beaver-login
+        :app-id="appId"
+        :redirect-url="redirectUri"
+        :state="state"
+        :scope="scope"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
-import BeaverSDK from '@beaver/js-sdk'
+import BeaverSDK from '@beaver-im/js-sdk'
 
 export default defineComponent({
   name: 'AuthPage',
@@ -52,8 +53,22 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  background: linear-gradient(135deg, #ff7d45 0%, #e86835 100%);
+  padding: 24px;
+  box-sizing: border-box;
+
+  .auth-card {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 }
 
 .auth-error {
@@ -61,7 +76,8 @@ export default defineComponent({
   padding: 16px 24px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
-  color: #ff4d4f;
-  font-size: 14px;
+  color: #ff5252;
+  font-size: 13px;
+  line-height: 1.5;
 }
 </style>

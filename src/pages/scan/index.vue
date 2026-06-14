@@ -54,36 +54,38 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  background: linear-gradient(135deg, #ff7d45 0%, #e86835 100%);
+  padding: 24px;
 }
 
 .scan-card {
   width: 100%;
   max-width: 420px;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .scan-title {
   margin: 0 0 16px;
-  font-size: 18px;
-  color: #303133;
+  font-size: 22px;
+  font-weight: 500;
+  color: #2d3436;
+  line-height: 1.3;
 }
 
 .scan-desc {
   margin: 0 0 12px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #606266;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #636e72;
 }
 
 .scan-sub {
   margin: 0;
   font-size: 12px;
-  color: #909399;
+  color: #b2bec3;
 }
 
 .scan-error {
@@ -91,7 +93,8 @@ export default defineComponent({
   padding: 16px 24px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
-  color: #ff4d4f;
-  font-size: 14px;
+  color: #ff5252;
+  font-size: 13px;
+  line-height: 1.5;
 }
 </style>
