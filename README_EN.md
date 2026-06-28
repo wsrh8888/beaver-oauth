@@ -69,11 +69,14 @@ Development server: http://localhost:8045
 
 | Project | Repository | Description |
 |---------|------------|-------------|
-| **beaver-server** | [GitHub](https://github.com/wsrh8888/beaver-server) / [Gitee](https://gitee.com/dawwdadfrf/beaver-server) | Backend Service |
-| **beaver-desktop** | [GitHub](https://github.com/wsrh8888/beaver-desktop) / [Gitee](https://gitee.com/dawwdadfrf/beaver-desktop) | Desktop App |
-| **beaver-open** | [GitHub](https://github.com/wsrh8888/beaver-open) | Open Platform Portal |
-| **beaver-oauth** | [GitHub](https://github.com/wsrh8888/beaver-oauth) | OAuth Login Pages |
-| **beaver-manager** | [GitHub](https://github.com/wsrh8888/beaver-manager) | Admin System |
+| **beaver-server** | [GitHub](https://github.com/wsrh8888/beaver-server) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-server) | Backend microservices |
+| **beaver-flutter** | [GitHub](https://github.com/wsrh8888/beaver-flutter) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-flutter) | Mobile (Flutter, recommended) |
+| **beaver-desktop** | [GitHub](https://github.com/wsrh8888/beaver-desktop) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-desktop) | Desktop (Electron) |
+| **beaver-manager** | [GitHub](https://github.com/wsrh8888/beaver-manager) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-manager) | Admin management system |
+| **beaver-docs** | [GitHub](https://github.com/wsrh8888/beaver-docs) | Documentation site |
+| **beaver-open** | [GitHub](https://github.com/wsrh8888/beaver-open) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-open) | Open platform |
+| **beaver-oauth** | [GitHub](https://github.com/wsrh8888/beaver-oauth) \| [Gitee](https://gitee.com/dawwdadfrf/beaver-oauth) | OAuth authorization (this repo) |
+| **beaver-uniapp** | [GitHub](https://github.com/wsrh8888/beaver-uniapp) | Mobile (UniApp, deprecated) |
 
 ## 📚 Documentation & Help
 
