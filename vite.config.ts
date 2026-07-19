@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "")
 
   return {
+    // 相对路径，便于任意子目录 / 静态托管部署
+    base: "./",
     resolve: {
       alias: {
         "@": resolve(__dirname, "src")
