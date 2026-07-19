@@ -4,9 +4,8 @@
     <div v-else class="auth-card">
       <beaver-login
         :app-id="appId"
+        :api-base="apiBase"
         :redirect-url="redirectUri"
-        :state="state"
-        :scope="scope"
       />
     </div>
   </div>
@@ -15,6 +14,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
 import BeaverSDK from '@beaver-im/js-sdk'
+import { config } from '@/config/env'
 
 export default defineComponent({
   name: 'AuthPage',
@@ -22,9 +22,8 @@ export default defineComponent({
     const params = new URLSearchParams(window.location.search)
 
     const appId = ref(params.get('appId') || '')
-    const redirectUri = ref(params.get('redirectUri') || params.get('redirect_uri') || '')
-    const state = ref(params.get('state') || '')
-    const scope = ref(params.get('scope') || '')
+    const redirectUri = ref(params.get('redirectUri') || '')
+    const apiBase = config.baseAPI
     const pageError = ref('')
 
     onMounted(() => {
@@ -38,8 +37,7 @@ export default defineComponent({
     return {
       appId,
       redirectUri,
-      state,
-      scope,
+      apiBase,
       pageError
     }
   }

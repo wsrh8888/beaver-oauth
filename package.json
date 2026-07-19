@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@beaver-im/js-sdk": "^1.0.0",
+    "@beaver-im/js-sdk": "^1.0.2",
     "@element-plus/icons-vue": "2.3.1",
     "axios": "1.10.0",
     "element-plus": "2.10.2",
