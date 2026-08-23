@@ -11,7 +11,8 @@
     "build_prod": "vue-tsc -b && vite build --mode=prod",
     "build_test": "vue-tsc -b && vite build --mode=test",
     "lint": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "add-copyright-header": "node scripts/add-copyright-header.mjs"
   },
   "dependencies": {
     "@beaver-im/js-sdk": "^1.0.2",
