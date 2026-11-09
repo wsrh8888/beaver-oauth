@@ -15,7 +15,7 @@
     "add-copyright-header": "node scripts/add-copyright-header.mjs"
   },
   "dependencies": {
-    "@beaver-im/js-sdk": "^1.0.2",
+    "@beaver-im/js-sdk": "^1.1.0",
     "@element-plus/icons-vue": "2.3.1",
     "axios": "1.10.0",
     "element-plus": "2.10.2",

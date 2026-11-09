@@ -24,7 +24,7 @@
     <p v-if="pageError" class="auth-error">{{ pageError }}</p>
     <div v-else class="auth-card">
       <beaver-login
-        :app-id="appId"
+        :oauth-id="appId"
         :api-base="apiBase"
         :redirect-url="redirectUri"
       />
